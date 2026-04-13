@@ -25,3 +25,19 @@ When(/^I click on "([^"]*)" in the Quick Launch widget$/, async (shortcut) => {
 Then(/^I should be redirected to the "([^"]*)" page$/, async (pageUrlPart) => {
     await homePage.verifyUrlContains(pageUrlPart);
 });
+
+When(/^I search for "([^"]*)" in the side menu$/, async (menuItem) => {
+    await homePage.searchSideMenu(menuItem);
+});
+
+Then(/^I should see the "([^"]*)" menu item$/, async (menuItem) => {
+    await homePage.verifySideMenuItem(menuItem);
+});
+
+When(/^I click on the user profile picture$/, async () => {
+    await homePage.openUserDropdown();
+});
+
+When(/^I select "([^"]*)" from the dropdown$/, async (option) => {
+    await homePage.selectUserDropdownOption(option);
+});

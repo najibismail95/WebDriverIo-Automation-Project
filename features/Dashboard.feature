@@ -26,3 +26,14 @@ Feature: Dashboard Page post Login
       | Assign Leave | assignLeave           |
       | Leave List   | viewLeaveList         |
       | Timesheets   | viewEmployeeTimesheet |
+
+  @sideMenu
+  Scenario: Verify Side Menu Search
+    When I search for "Admin" in the side menu
+    Then I should see the "Admin" menu item
+  
+  @logout
+  Scenario: Verify Logout functionality
+    When I click on the user profile picture
+    And I select "Logout" from the dropdown
+    Then I should be redirected to the "login" page
