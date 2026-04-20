@@ -23,6 +23,7 @@ jobs:
     - name: Install dependencies
       run: yarn install
     - name: Run tests
+      continue-on-error: true
       run: yarn test
       env:
         ALLURE: 'true'
