@@ -15,6 +15,7 @@ export class LoginPage extends BasePage {
         await $(this.usernameField).waitForDisplayed();
         await $(this.usernameField).setValue(username);
         await $(this.passwordField).setValue(password);
+        await $(this.loginBtn).waitForClickable();
         await $(this.loginBtn).click();
     }
 
