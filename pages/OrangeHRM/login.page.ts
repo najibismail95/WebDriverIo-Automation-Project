@@ -12,6 +12,7 @@ export class LoginPage extends BasePage {
     }
 
     async login(username: string, password: string): Promise<void> {
+        await $(this.usernameField).waitForDisplayed();
         await $(this.usernameField).setValue(username);
         await $(this.passwordField).setValue(password);
         await $(this.loginBtn).click();

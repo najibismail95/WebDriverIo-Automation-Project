@@ -9,7 +9,7 @@ Given(/^I am on the Login Page$/, async () => {
 });
 
 When(/^I login with username and password$/, async () => {
-    await loginPage.login(process.env.USERNAME!, process.env.PASSWORD!);
+    await loginPage.login(process.env.APP_USERNAME!, process.env.APP_PASSWORD!);
 });
 
 When(/^I login with "([^"]*)" and "([^"]*)"$/, async (username: string, password: string) => {
