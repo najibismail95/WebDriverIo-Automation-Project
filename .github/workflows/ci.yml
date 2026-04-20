@@ -25,6 +25,7 @@ jobs:
     - name: Run tests
       run: yarn test
       env:
+        ALLURE: 'true'
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
     - name: Upload Allure results

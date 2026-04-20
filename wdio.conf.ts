@@ -350,7 +350,8 @@ export const config: WebdriverIO.Config = {
      * @param {<Object>} results object containing test results
      */
     onComplete: function(exitCode, config, capabilities, results) {
-        if (runAllure) {
+        // This hook is for local convenience to open the report automatically. It's not needed in CI.
+        if (runAllure && process.env.CI !== 'true') {
             const { exec, spawn } = require('child_process');
             return new Promise<void>((resolve, reject) => {
                 exec('yarn allure generate allure-results --clean', (err: any, stdout: any, stderr: any) => {
